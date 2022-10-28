@@ -27,13 +27,13 @@ createApp({
             } else {
                 this.hasError = true;
             }
-            // this.newtask = '';
+            // this.newtask.text = '';
         },
         removeToDo(i) {
             this.listToDo.splice(i, 1)
         },
         checkToDo() {
-            // this.item.done = true
+            this.newtask.done = true
         }
     }
 }).mount('#app')
