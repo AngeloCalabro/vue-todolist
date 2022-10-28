@@ -3,9 +3,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            newtask: '',
+            newtask: {
+                text: '',
+                done: false
+            },
             hasError: false,
-            item: 0,
             listToDo: [
                 {
                     text: 'ToDo1',
@@ -19,13 +21,13 @@ createApp({
     },
     methods: {
         addToDo() {
-            if (this.newtask.length >= 3) {
-                this.listToDo.item.text.unshift(this.newtask)
+            if (this.newtask.text.length >= 3) {
+                this.listToDo.text.unshift(this.newtask.text)
                 this.hasError = false;
             } else {
                 this.hasError = true;
             }
-            this.newtask = '';
+            this.newtask.text = '';
         },
         removeToDo(i) {
             // this.listToDo.splice(i, 1)

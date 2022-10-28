@@ -31,7 +31,7 @@
 
         <!-- INPUT ToDo -->
         <input class="form-control w-25 d-inline-block m-1 text-success" type="text"
-            placeholder="Inserisci cose da fare" v-model="newtask" @keyup.enter="addToDo">
+            placeholder="Inserisci cose da fare" v-model="newtask.text" @keyup.enter="addToDo">
 
         <!-- Button addToDo -->
         <button class="btn btn-success m-1" @click="addToDo">ToDo</button>
@@ -42,14 +42,14 @@
             <li v-for="(item, index) in listToDo"
                 class="d-flex justify-content-between align-items-center list-unstyled">
                 <span class="btn" @click="checkToDo">
-                    <!-- <span :class="item.done" v-if="done === true"></span> -->
+                    <!-- <span :class="item.done" v-if="done == true"></span> -->
                     <span>{{item.text}}</span>
                 </span>
                 <button @click.stop="removeToDo(index)" class="btn text-end me-3"><i
                         class="fa-regular fa-trash-can"></i></button>
             </li>
         </ul>
-        <!-- <div v-else>Non ci sono cose da comprare</div> -->
+        <!-- <div v-else>Non ci sono cose da fare</div> -->
     </div>
 
     <!-- SCRIPT JS -->
