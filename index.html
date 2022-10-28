@@ -25,25 +25,26 @@
 
 <body>
     <div id="app" class="text-white">
-        {{message}}
 
         <h1 class="text-success">Boolean ToDo!</h1>
 
-        <input class="form-control w-25 d-inline-block m-1" type="text" placeholder="Inserisci cose da fare"
-            v-model="newtask">
+        <input class="form-control w-25 d-inline-block m-1 text-success" type="text"
+            placeholder="Inserisci cose da fare" v-model="newtask" @keyup.enter="addToDo">
         <button class="btn btn-success m-1" @click="addToDo">ToDo</button>
         <div v-if="hasError" class="text-danger">Il task deve essere almeno di 3 caratteri</div>
 
-        <ul class="bg-success w-25 rounded-1">
+        <ul v-if="listToDo.lenght > 0" class="bg-success w-25 rounded-1">
             <li v-for="(item, index) in listToDo"
                 class="d-flex justify-content-between align-items-center list-unstyled">
-                <span>{{item.done}}</span>
-                <span>{{item.text}}</span>
-                <button @click.stop="removeToDo" class="btn text-end me-3"><i
+                <span class="btn" @click="checkToDo">
+                    <span :class="item.done" v-if="done === true">X</span>
+                    <span>{{item.text}}</span>
+                </span>
+                <button @click.stop="removeToDo(index)" class="btn text-end me-3"><i
                         class="fa-regular fa-trash-can"></i></button>
             </li>
-
         </ul>
+        <div v-else>Non ci sono cose da comprare</div>
     </div>
 
     <!-- SCRIPT JS -->

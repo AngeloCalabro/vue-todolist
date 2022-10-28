@@ -6,16 +6,12 @@ createApp({
             newtask: '',
             hasError: false,
             item: 0,
-            listToDo: [
-                {
+            listToDo: {
+                item: {
                     text: 'ToDo1',
                     done: false
-                },
-                {
-                    text: 'ToDo2',
-                    done: false
                 }
-            ]
+            }
         }
     },
     computed: {
@@ -24,15 +20,18 @@ createApp({
     methods: {
         addToDo() {
             if (this.newtask.length >= 3) {
-                this.listToDo[item].text.unshift(this.newtask)
+                this.listToDo.item.text.unshift(this.newtask)
                 this.hasError = false;
             } else {
                 this.hasError = true;
             }
-            this.newtask = ''
+            this.newtask = '';
         },
-        removeToDo() {
-
+        removeToDo(i) {
+            this.listToDo.splice(i, 1)
+        },
+        checkToDo() {
+            this.item.done = true
         }
     }
 }).mount('#app')
