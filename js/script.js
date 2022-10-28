@@ -6,12 +6,12 @@ createApp({
             newtask: '',
             hasError: false,
             item: 0,
-            listToDo: {
-                item: {
+            listToDo: [
+                {
                     text: 'ToDo1',
                     done: false
                 }
-            }
+            ]
         }
     },
     computed: {
