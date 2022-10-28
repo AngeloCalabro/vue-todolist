@@ -28,10 +28,10 @@ createApp({
             this.newtask = '';
         },
         removeToDo(i) {
-            this.listToDo.splice(i, 1)
+            // this.listToDo.splice(i, 1)
         },
         checkToDo() {
-            this.item.done = true
+            // this.item.done = true
         }
     }
 }).mount('#app')
