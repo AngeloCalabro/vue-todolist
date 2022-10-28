@@ -10,7 +10,7 @@ createApp({
             hasError: false,
             listToDo: [
                 {
-                    text: 'ToDo1',
+                    text: 'ToDo',
                     done: false
                 }
             ]
@@ -22,12 +22,14 @@ createApp({
     methods: {
         addToDo() {
             if (this.newtask.text.length >= 3) {
-                this.listToDo.unshift(this.newtask)
+                let taskToAdd = Object.assign({}, this.newtask)
+                // let taskToAdd = {...this.newtask}
+                this.listToDo.unshift(taskToAdd)
                 this.hasError = false;
             } else {
                 this.hasError = true;
             }
-            // this.newtask.text = '';
+            this.newtask.text = '';
         },
         removeToDo(i) {
             this.listToDo.splice(i, 1)
