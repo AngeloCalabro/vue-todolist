@@ -1,3 +1,14 @@
 body {
     background-color: #dedede;
 }
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+}
+
+.my-tx-center {
+    text-align: center;
+    line-height: 1rem;
+}

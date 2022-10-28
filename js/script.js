@@ -23,7 +23,7 @@ createApp({
         addToDo() {
             if (this.newtask.text.length >= 3) {
                 let taskToAdd = Object.assign({}, this.newtask)
-                // let taskToAdd = {...this.newtask}
+                // let taskToAdd = {...this.newtask} {*altro modo per farlo*}
                 this.listToDo.unshift(taskToAdd)
                 this.hasError = false;
             } else {
@@ -35,7 +35,10 @@ createApp({
             this.listToDo.splice(i, 1)
         },
         checkToDo() {
-            this.newtask.done = true
+            // this.listToDo.done = !this.listToDo.done
         }
+    },
+    mounted() {
+        console.log('mounted')
     }
 }).mount('#app')
