@@ -34,8 +34,8 @@ createApp({
         removeToDo(i) {
             this.listToDo.splice(i, 1)
         },
-        checkToDo() {
-            // this.listToDo.done = !this.listToDo.done
+        checkToDo(i) {
+            this.listToDo[i].done = !this.listToDo[i].done
         }
     },
     mounted() {
