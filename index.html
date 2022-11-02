@@ -41,15 +41,23 @@
         <ul v-if="listToDo.length > 0" class="bg-success w-50 rounded-1">
             <li v-for="(item, index) in listToDo" :key="index"
                 class="d-flex justify-content-between align-items-center list-unstyled">
+
+                <!-- riga di Todo -->
                 <div class="btn d-flex align-items-center" @click="checkToDo(item)">
+
+                    <!-- casella checkbox done | !done -->
                     <div v-if="item.done" class="d-inline-block checkbox"></div>
                     <div v-else class="d-inline-block checkbox fw-bold my-tx-center text-black">X</div>
                     <div class="fw-bold">&nbsp;{{item.text}}</div>
                 </div>
+
+                <!-- bottone rimozione riga -->
                 <button @click.stop="removeToDo(index)" class="btn text-end me-3"><i
                         class="fa-regular fa-trash-can"></i></button>
             </li>
         </ul>
+
+        <!-- in caso non ci siano righe -->
         <div v-else class="text-success">Non ci sono cose da fare</div>
     </div>
 
